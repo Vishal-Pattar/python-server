@@ -13,7 +13,7 @@ def run_code():
         code = request.json.get('code', '')
         
         if not code:
-            return jsonify({'error': 'No code provided'}), 400
+            return jsonify({'error': 'No code provided'})
 
         filename = f'temp_code_{uuid.uuid4().hex}.py'
 
@@ -42,7 +42,7 @@ def run_back():
     try:
         code = request.json.get('code', '')
         if not code:
-            return jsonify({'error': 'No code provided'}), 400
+            return jsonify({'error': 'No code provided'})
         return jsonify({
             'result': code,
             'working': 'yes'
